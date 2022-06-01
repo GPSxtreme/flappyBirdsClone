@@ -10,7 +10,7 @@ public class pipeMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        topPipe.transform.position = new Vector2(topPipe.transform.position.x,Random.Range(topPipe.transform.position.y - 0.08f,topPipe.transform.position.y+0.3f));
+        topPipe.transform.position = new Vector2(topPipe.transform.position.x,Random.Range(topPipe.transform.position.y - 0.05f,topPipe.transform.position.y+0.3f));
         bottomPipe.transform.position = new Vector2(bottomPipe.transform.position.x,Random.Range(bottomPipe.transform.position.y+0.08f,bottomPipe.transform.position.y-0.3f));
 
     }
