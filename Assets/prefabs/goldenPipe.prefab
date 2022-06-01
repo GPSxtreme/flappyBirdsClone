@@ -51,7 +51,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1afef8972a6f57b47bfd744ad1a32009, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -160,7 +160,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1afef8972a6f57b47bfd744ad1a32009, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -205,7 +205,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.004668236, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -216,7 +216,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.25, y: 1.6}
+  m_Size: {x: 0.24066353, y: 1.6}
   m_EdgeRadius: 0
 --- !u!1 &2728200740598852765
 GameObject:
@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 2728200740598852763}
   - component: {fileID: 2728200740598852762}
   m_Layer: 0
-  m_Name: pipe
+  m_Name: goldenPipe
   m_TagString: pipe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -277,7 +277,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2728200740629882409}
   - component: {fileID: 2728200740629882406}
-  - component: {fileID: 8791527905457234621}
+  - component: {fileID: 2994093246745987412}
   m_Layer: 0
   m_Name: 'passPoint '
   m_TagString: Untagged
@@ -312,7 +312,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.042602837, y: -0.005313635}
+  m_Offset: {x: 0.04163444, y: -0.005313635}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -323,9 +323,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.15136588, y: 3.0498042}
+  m_Size: {x: 0.16026378, y: 3.0498042}
   m_EdgeRadius: 0
---- !u!114 &8791527905457234621
+--- !u!114 &2994093246745987412
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -337,4 +337,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e69b2f27ba9316a468d9b1b7caca371e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: 1
+  points: 5

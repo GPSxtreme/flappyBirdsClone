@@ -7,6 +7,8 @@ public class pipeSpawner : MonoBehaviour
     public float maxTime = 1f;
     private float timer;
     public GameObject pipe;
+    public GameObject goldenPipe;
+    private GameObject newPipe;
     public float height;
     // Start is called before the first frame update
     void Start()
@@ -24,7 +26,11 @@ public class pipeSpawner : MonoBehaviour
         timer += Time.deltaTime;
     }
     private void pipeInstantiate(){
-        GameObject newPipe = Instantiate(pipe);
+        var randNO = Random.Range(0,4);
+        if(randNO == 2)
+        newPipe = Instantiate(goldenPipe);
+        else 
+        newPipe = Instantiate(pipe);
         newPipe.transform.position = transform.position + new Vector3(0,Random.Range(-height,height),0);
         Destroy(newPipe , 5);
     }
