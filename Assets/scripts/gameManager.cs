@@ -15,20 +15,30 @@ public class gameManager : MonoBehaviour
         Time.timeScale = 0;
         uiController.instance.startMenu.SetActive(true);
         uiController.instance.scoreObj.SetActive(false);
-        Time.timeScale = 0;
+        uiController.instance.deathMenu.SetActive(false);
+        playerController.instance.isAlive = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(uiController.instance.startMenu.activeInHierarchy == true)
+        playerController.instance.isOnMainScreen = true;
+        else
+        playerController.instance.isOnMainScreen = false;
     }
-    public void restart(){
-        playerController.instance.gameObject.SetActive(false);
+    public void deathScreen(){
+        playerController.instance.theRb.gravityScale = 2;
+        playerController.instance.isAlive = false;
+        playerController.instance.theRb.freezeRotation = false;
+        uiController.instance.scoreObj.SetActive(false);
         StartCoroutine(deathCo());
     }
     private IEnumerator deathCo(){
         yield return new WaitForSeconds(delay);
+        uiController.instance.showDeathUi();
+    }
+    public void start(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

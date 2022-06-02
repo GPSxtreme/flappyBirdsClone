@@ -6,6 +6,7 @@ TagManager:
   tags:
   - player
   - pipe
+  - land
   layers:
   - Default
   - TransparentFX
