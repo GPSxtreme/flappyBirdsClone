@@ -16,6 +16,7 @@ public class gameManager : MonoBehaviour
         uiController.instance.startMenu.SetActive(true);
         uiController.instance.scoreObj.SetActive(false);
         uiController.instance.deathMenu.SetActive(false);
+        uiController.instance.settingsMenu.SetActive(false);
         playerController.instance.isAlive = true;
     }
 

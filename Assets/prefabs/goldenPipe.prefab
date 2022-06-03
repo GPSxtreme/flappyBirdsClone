@@ -318,10 +318,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56ce273c975bd0043a53ada7218bade8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 1.25
   topPipe: {fileID: 2728200739293522966}
   bottomPipe: {fileID: 2728200739275971580}
   heightDiff: 0.2
+  pipeOffScreenLimit: 2
 --- !u!1 &2728200740629882408
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,8 @@ public class uiController : MonoBehaviour
     public Text highScore;
     public Text scoreCardTxt;
     public GameObject[] medals;
+    public GameObject settingsMenu;
+    
 
     void Awake(){
         instance = this;
@@ -62,5 +64,17 @@ public class uiController : MonoBehaviour
         medals[1].SetActive(true);
         if(a>20)
         medals[2].SetActive(true);
+    }
+    public void settingsMenuToggle(){
+        if(settingsMenu.activeInHierarchy == true){
+            settingsMenu.SetActive(false);
+            if(!startMenu.activeInHierarchy)
+            Time.timeScale = 1;
+        }
+        else if(settingsMenu.activeInHierarchy == false){
+            settingsMenu.SetActive(true);
+            Time.timeScale = 0;
+        }
+        
     }
 }

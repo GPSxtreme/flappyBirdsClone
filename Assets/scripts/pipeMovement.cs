@@ -8,11 +8,12 @@ public class pipeMovement : MonoBehaviour
     public GameObject topPipe;
     public GameObject bottomPipe;
     public float heightDiff;
+    public float pipeOffScreenLimit;
     // Start is called before the first frame update
     void Start()
     {
-        topPipe.transform.position = new Vector2(topPipe.transform.position.x,Random.Range(topPipe.transform.position.y-heightDiff,topPipe.transform.position.y+heightDiff));
-        bottomPipe.transform.position = new Vector2(bottomPipe.transform.position.x,Random.Range(bottomPipe.transform.position.y+heightDiff,bottomPipe.transform.position.y-heightDiff));
+        topPipe.transform.position = new Vector2(topPipe.transform.position.x,Random.Range(topPipe.transform.position.y-heightDiff,topPipe.transform.position.y+heightDiff/pipeOffScreenLimit));
+        bottomPipe.transform.position = new Vector2(bottomPipe.transform.position.x,Random.Range(bottomPipe.transform.position.y+heightDiff,bottomPipe.transform.position.y-heightDiff/pipeOffScreenLimit));
 
     }
 
