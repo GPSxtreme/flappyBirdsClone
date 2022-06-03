@@ -27,8 +27,11 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0) && isAlive && !isOnMainScreen){
-            theRb.velocity = new Vector2(0,flapStrength);
+        
+    }
+    public void jump(int divider){
+        if(isAlive && !isOnMainScreen){
+            theRb.velocity = new Vector2(0,flapStrength/divider);
             audioManager.instance.playSfx(4);
             audioManager.instance.playSfx(3);
             Instantiate(airFx , airFxPoint.transform.position,transform.rotation);

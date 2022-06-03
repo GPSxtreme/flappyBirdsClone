@@ -1107,6 +1107,8 @@ GameObject:
   - component: {fileID: 647445404}
   - component: {fileID: 647445409}
   - component: {fileID: 647445410}
+  - component: {fileID: 647445412}
+  - component: {fileID: 647445411}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -1128,7 +1130,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.01}
-  m_Size: {x: 0.21, y: 0.0001}
+  m_Size: {x: 0.15, y: 0.0001}
   m_Direction: 0
 --- !u!50 &647445405
 Rigidbody2D:
@@ -1145,12 +1147,12 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1.25
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!212 &647445406
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1249,7 +1251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aee439c7bba64f4aac845391629cb45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flapStrength: 3.75
+  flapStrength: 2.5
   currentScore: 0
   airFx: {fileID: 2667826311125774277, guid: 6f5694c6c8b6b9d48a8685f1fcb6c7f1, type: 3}
   airFxPoint: {fileID: 2015997289}
@@ -1269,6 +1271,83 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathFx: {fileID: 6211661950924042972, guid: 79843e4a26e0902408daf87d0158a56e, type: 3}
+--- !u!114 &647445411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647445403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4efd258fb0a58064e9f50156817d1391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &647445412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647445403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: a5d849e809dce70439cad62664d2be4e, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 647445411}
+        m_TargetAssemblyTypeName: touchInputScript, Assembly-CSharp
+        m_MethodName: jump
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ab382cb3-244e-45ec-be48-d6859efc20c2
+    m_ActionName: touch/touchPress
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 647445411}
+        m_TargetAssemblyTypeName: touchInputScript, Assembly-CSharp
+        m_MethodName: smolJump
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0e5b6051-877c-4f52-9cdc-0b5260f85b25
+    m_ActionName: touch/multiTouchPress[/Simulated Touchscreen/touch0/press,/Simulated
+      Touchscreen/touch1/press,/Simulated Touchscreen/touch2/press,/Simulated Touchscreen/touch3/press,/Simulated
+      Touchscreen/touch4/press,/Simulated Touchscreen/touch5/press,/Simulated Touchscreen/touch6/press,/Simulated
+      Touchscreen/touch7/press,/Simulated Touchscreen/touch8/press,/Simulated Touchscreen/touch9/press]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: touch
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &690970888
 GameObject:
   m_ObjectHideFlags: 0
@@ -1929,7 +2008,7 @@ Transform:
   m_GameObject: {fileID: 1192379132}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.006, y: -0.008, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 647445408}
   m_RootOrder: 0
@@ -2970,7 +3049,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.0019142628, y: 0}
@@ -3080,7 +3159,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.0011911392, y: -0.0011395216}
@@ -3399,7 +3478,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2015997288}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.102, z: 0}
+  m_LocalPosition: {x: 0, y: -0.065, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 647445408}
