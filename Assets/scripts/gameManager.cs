@@ -12,12 +12,17 @@ public class gameManager : MonoBehaviour
     }
     void Start()
     {
+        //set ui
         Time.timeScale = 0;
         uiController.instance.startMenu.SetActive(true);
         uiController.instance.scoreObj.SetActive(false);
         uiController.instance.deathMenu.SetActive(false);
         uiController.instance.settingsMenu.SetActive(false);
         playerController.instance.isAlive = true;
+        //set settings
+        settingsMenu.instance.setQuality(PlayerPrefs.GetInt("qualityIndex"));
+        settingsMenu.instance.setMusicVolume(PlayerPrefs.GetInt("musicVolume"));
+        settingsMenu.instance.setSfxVolume(PlayerPrefs.GetInt("sfxVolume"));
     }
 
     // Update is called once per frame
