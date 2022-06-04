@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
+
 public class gameManager : MonoBehaviour
 {
     public static gameManager instance;
+    public AudioMixer masterMixer;
     public float delay;
     // Start is called before the first frame update
     void Awake(){
@@ -20,9 +23,9 @@ public class gameManager : MonoBehaviour
         uiController.instance.settingsMenu.SetActive(false);
         playerController.instance.isAlive = true;
         //set settings
-        settingsMenu.instance.setQuality(PlayerPrefs.GetInt("qualityIndex"));
-        settingsMenu.instance.setMusicVolume(PlayerPrefs.GetInt("musicVolume"));
-        settingsMenu.instance.setSfxVolume(PlayerPrefs.GetInt("sfxVolume"));
+        QualitySettings.SetQualityLevel(PlayerPrefs.GetInt("qualityIndex"));
+        masterMixer.SetFloat("musicVolume",PlayerPrefs.GetInt("musicVolume"));
+        masterMixer.SetFloat("sfxVolume",PlayerPrefs.GetInt("sfxVolume"));
     }
 
     // Update is called once per frame
