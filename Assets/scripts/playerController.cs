@@ -11,7 +11,7 @@ public class playerController : MonoBehaviour
     public Transform airFxPoint;
     public bool isAlive;
     public bool isOnMainScreen;
-
+    public Collider2D playerCollider;
     public Rigidbody2D theRb;
     // Start is called before the first frame update
     void Awake(){

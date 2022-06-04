@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class pipeSpawner : MonoBehaviour
 {
+    public static pipeSpawner instance;
     public float maxTime = 1f;
     private float timer;
     public GameObject pipe;
     public GameObject goldenPipe;
     private GameObject newPipe;
     public float height;
-    // Start is called before the first frame update
+    void Awake(){
+        instance = this;
+    }
     void Start()
     {
         pipeInstantiate();

@@ -321,7 +321,7 @@ MonoBehaviour:
   speed: 1.25
   topPipe: {fileID: 2728200739293522966}
   bottomPipe: {fileID: 2728200739275971580}
-  heightDiff: 0.3
+  heightDiff: 0.2
   pipeOffScreenLimit: 2
 --- !u!1 &2728200740629882408
 GameObject:

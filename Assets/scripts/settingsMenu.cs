@@ -10,6 +10,10 @@ public class settingsMenu : MonoBehaviour
     public Slider musicSlider;
     public Slider sfxSlider;
     public Dropdown qualityDropDown;
+    public InputField modKeyInput;
+    public string keyCode;
+    public GameObject modMenu;
+    public string key;
     void Awake(){
         instance = this;
     }
@@ -37,5 +41,11 @@ public class settingsMenu : MonoBehaviour
     public void setSfxVolume(float volume){
         masterMixer.SetFloat("sfxVolume",volume);
         PlayerPrefs.SetInt("sfxVolume",((int)volume));
+    }
+    public void modKeyVerifier(){
+        key = modKeyInput.text;
+        if(key == keyCode){
+            modMenu.SetActive(true);
+        }
     }
 }
