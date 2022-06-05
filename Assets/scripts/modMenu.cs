@@ -20,7 +20,6 @@ public class modMenu : MonoBehaviour
     public void onSubmitModSettings(){
         //storing values in local
         jumpStrength = float.Parse(jumpStrengthIF.text);
-        Debug.Log(jumpStrengthIF.text);
         gravityMod = float.Parse(gravityModIF.text);
         scoreMod = int.Parse(scoreModIF.text);
         pipeSpawnerSpeed = float.Parse(pipeSpawnerSpeedIF.text);
