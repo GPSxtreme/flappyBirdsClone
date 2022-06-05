@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 public class modMenu : MonoBehaviour
 {
-    private string jumpStrength;
-    private string gravityMod;
-    private string scoreMod;
-    private string pipeSpawnerSpeed;
-    private string yDifference;
+    private float jumpStrength;
+    private float gravityMod;
+    private int scoreMod;
+    private float pipeSpawnerSpeed;
+    private float yDifference;
     public InputField jumpStrengthIF;
     public InputField gravityModIF;
     public InputField scoreModIF;
@@ -19,18 +19,17 @@ public class modMenu : MonoBehaviour
     
     public void onSubmitModSettings(){
         //storing values in local
-        jumpStrength = jumpStrengthIF.text;
-        gravityMod = gravityModIF.text;
-        scoreMod = scoreModIF.text;
-        pipeSpawnerSpeed = pipeSpawnerSpeedIF.text;
-        yDifference = yDifferenceIF.text;
+        if(float.Parse(jumpStrengthIF.text) !=0) jumpStrength = float.Parse(jumpStrengthIF.text);
+        if(float.Parse(gravityModIF.text) !=0) gravityMod = float.Parse(gravityModIF.text);
+        if(int.Parse(scoreModIF.text) !=0) scoreMod = int.Parse(scoreModIF.text);
+        if(float.Parse(pipeSpawnerSpeedIF.text) !=0) pipeSpawnerSpeed = float.Parse(pipeSpawnerSpeedIF.text);
+        if(float.Parse(yDifferenceIF.text) !=0) yDifference = float.Parse(yDifferenceIF.text);
         //injection local values
-        playerController.instance.flapStrength = float.Parse(jumpStrength);
-        playerController.instance.theRb.gravityScale = float.Parse(gravityMod);
-        playerController.instance.currentScore = int.Parse(scoreMod);
-
-        pipeSpawner.instance.maxTime = float.Parse(pipeSpawnerSpeed);
-        pipeSpawner.instance.height = float.Parse(yDifference);
+        if(jumpStrength != 0) playerController.instance.flapStrength = jumpStrength;
+        if(gravityMod != 0) playerController.instance.theRb.gravityScale = gravityMod;
+        if(scoreMod != 0) playerController.instance.currentScore = scoreMod;
+        if(pipeSpawnerSpeed != 0) pipeSpawner.instance.maxTime = pipeSpawnerSpeed;
+        if(yDifference != 0)pipeSpawner.instance.height = yDifference;
         if(colliderToggle.isOn == true)
         playerCollision.instance.shouldWork = false;
         gameObject.SetActive(false);

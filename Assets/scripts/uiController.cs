@@ -75,6 +75,8 @@ public class uiController : MonoBehaviour
             settingsMenu.SetActive(true);
             Time.timeScale = 0;
         }
-        
+    }
+    public void githubRedirect(){
+        Application.OpenURL("https://github.com/GPSxtreme");
     }
 }

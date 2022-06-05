@@ -33,7 +33,7 @@ public class playerController : MonoBehaviour
         if(isAlive && !isOnMainScreen){
             theRb.velocity = new Vector2(0,flapStrength/divider);
             audioManager.instance.playSfx(4);
-            audioManager.instance.playSfx(3);
+            //audioManager.instance.playSfx(3);
             Instantiate(airFx , airFxPoint.transform.position,transform.rotation);
         }
     }
