@@ -19,19 +19,21 @@ public class modMenu : MonoBehaviour
     
     public void onSubmitModSettings(){
         //storing values in local
-        if(float.Parse(jumpStrengthIF.text) !=0) jumpStrength = float.Parse(jumpStrengthIF.text);
-        if(float.Parse(gravityModIF.text) !=0) gravityMod = float.Parse(gravityModIF.text);
-        if(int.Parse(scoreModIF.text) !=0) scoreMod = int.Parse(scoreModIF.text);
-        if(float.Parse(pipeSpawnerSpeedIF.text) !=0) pipeSpawnerSpeed = float.Parse(pipeSpawnerSpeedIF.text);
-        if(float.Parse(yDifferenceIF.text) !=0) yDifference = float.Parse(yDifferenceIF.text);
+        jumpStrength = float.Parse(jumpStrengthIF.text);
+        Debug.Log(jumpStrengthIF.text);
+        gravityMod = float.Parse(gravityModIF.text);
+        scoreMod = int.Parse(scoreModIF.text);
+        pipeSpawnerSpeed = float.Parse(pipeSpawnerSpeedIF.text);
+        yDifference = float.Parse(yDifferenceIF.text);
         //injection local values
         if(jumpStrength != 0) playerController.instance.flapStrength = jumpStrength;
         if(gravityMod != 0) playerController.instance.theRb.gravityScale = gravityMod;
         if(scoreMod != 0) playerController.instance.currentScore = scoreMod;
         if(pipeSpawnerSpeed != 0) pipeSpawner.instance.maxTime = pipeSpawnerSpeed;
-        if(yDifference != 0)pipeSpawner.instance.height = yDifference;
-        if(colliderToggle.isOn == true)
-        playerCollision.instance.shouldWork = false;
+        if(yDifference != 0) pipeSpawner.instance.height = yDifference;
+        if(colliderToggle.isOn == true) playerCollision.instance.shouldWork = false;
+    }
+    public void close(){
         gameObject.SetActive(false);
     }
 }
